@@ -44,7 +44,7 @@ function NavBar() {
         display={isOPen ? "block" : "none"}
       >
         <Box w={"xs"} mt="16">
-          Gosetu
+          Gosetu Logo...
         </Box>
       </Box>
     </>
