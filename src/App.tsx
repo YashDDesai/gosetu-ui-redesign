@@ -1,29 +1,22 @@
-import {
-  ChevronDownIcon,
-  CloseIcon,
-  HamburgerIcon,
-  TimeIcon,
-} from "@chakra-ui/icons";
-import {
-  Box,
-  Button,
-  Flex,
-  HStack,
-  Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  VStack,
-} from "@chakra-ui/react";
-import React, { useState } from "react";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { Box, Button } from "@chakra-ui/react";
+import React from "react";
 
 function NavBar() {
   const [isOPen, setIsOpen] = React.useState(true);
   return (
     <>
       <Button
-        as={"button"}
+        as="button"
+        rounded={"none"}
+        bgColor="transparent"
+        _hover={{
+          bgColor: "transparent",
+          color: "black",
+          fontWeight: "600",
+          scale: "0.75",
+        }}
+        _active={{ bgColor: "transparent" }}
         onClick={() => setIsOpen((isOpen) => !isOpen)}
         cursor="pointer"
         position={"absolute"}
@@ -33,11 +26,9 @@ function NavBar() {
       >
         {isOPen ? <CloseIcon fontSize={12} /> : <HamburgerIcon />}
       </Button>
-
       <Box
         shadow={"2xl"}
         h="calc(100vh)"
-        // w="calc(100vw)"
         zIndex={998}
         position={"absolute"}
         left={0}
