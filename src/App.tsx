@@ -1,52 +1,14 @@
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { Box, Button } from "@chakra-ui/react";
-import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import SidebarWithHeader from "./components/SidebarWithHeader";
 
-function NavBar() {
-  const [isOPen, setIsOpen] = React.useState(true);
+export default function App() {
   return (
     <>
-      <Button
-        as="button"
-        rounded={"none"}
-        bgColor="transparent"
-        _hover={{
-          bgColor: "transparent",
-          color: "black",
-          fontWeight: "600",
-          scale: "0.75",
-        }}
-        _active={{ bgColor: "transparent" }}
-        onClick={() => setIsOpen((isOpen) => !isOpen)}
-        cursor="pointer"
-        position={"absolute"}
-        top={0}
-        left={0}
-        zIndex={999}
-      >
-        {isOPen ? <CloseIcon fontSize={12} /> : <HamburgerIcon />}
-      </Button>
-      <Box
-        shadow={"2xl"}
-        h="calc(100vh)"
-        zIndex={998}
-        position={"absolute"}
-        left={0}
-        display={isOPen ? "block" : "none"}
-      >
-        <Box w={"xs"} mt="16">
-          Gosetu Logo...
-        </Box>
-      </Box>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+      </Routes>
+      <SidebarWithHeader>{}</SidebarWithHeader>
     </>
   );
 }
-function App() {
-  return (
-    <>
-      <NavBar />
-    </>
-  );
-}
-
-export default App;
