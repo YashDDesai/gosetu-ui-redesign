@@ -5,7 +5,7 @@ import Machines from "./components/Machines";
 import Profile from "./components/Profile";
 import Reports from "./components/Reports";
 import Settings from "./components/Settings";
-import SidebarWithHeader from "./components/SidebarWithHeader";
+import SidebarWithHeader from "./components/Nav/SidebarWithHeader";
 
 export default function App() {
   return (
